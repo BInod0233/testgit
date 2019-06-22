@@ -1,0 +1,26 @@
+{
+  "name": "iotparking",
+  "version": "1.0.0",
+  "description": "iot project",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engine":{
+    "node":"10.16.0"
+
+  },
+  "author": "Binod",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "helmet": "^3.18.0",
+    "joi": "^14.3.1",
+    "mongoose": "^5.6.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.10.2"
+  }
+}
