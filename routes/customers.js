@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const customers = await Customer.find().sort('name');
+  const customers = await Customer.find().sort('slot');
   res.send(customers);
 });
 
@@ -13,9 +13,9 @@ router.post('/', async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   let customer = new Customer({ 
-    name: req.body.name,
+    slot: req.body.slot,
     // isGold: req.body.isGold,
-     phone: req.body.phone
+    // phone: req.body.phone
   });
   customer = await customer.save();
   
@@ -28,7 +28,7 @@ router.put('/:id', async (req, res) => {
 
   const customer = await Customer.findByIdAndUpdate(req.params.id,
     { 
-      name: req.body.name,
+      slot: req.body.name,
       // isGold: req.body.isGold,
        phone: req.body.phone
     }, { new: true });
