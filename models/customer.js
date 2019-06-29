@@ -2,7 +2,7 @@ const Joi = require('joi');
 const mongoose = require('mongoose');
 
 const Customer = mongoose.model('Customer', new mongoose.Schema({
-  name: {
+  slot: {
     type: String,
     required: true,
     minlength: 5,
@@ -22,7 +22,7 @@ const Customer = mongoose.model('Customer', new mongoose.Schema({
 
 function validateCustomer(customer) {
   const schema = {
-    name: Joi.string().min(5).max(50).required(),
+    slot: Joi.string().min(5).max(50).required(),
    //  phone: Joi.string().min(5).max(50).required(),
     // isGold: Joi.boolean()
   };
